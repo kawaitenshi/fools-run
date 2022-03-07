@@ -39,6 +39,9 @@ public class GameStatus : MonoBehaviour
         gameOperText.text = "";
         slider.value = 1f;
         totalTime = timeLeft;
+
+        Time.timeScale = 1.0f;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -91,7 +94,8 @@ public class GameStatus : MonoBehaviour
     }
 
     public void PauseGame(string type) {
-        Time.timeScale = 0;
+        Time.timeScale = 0.0f;
+        Cursor.visible = true;
 
         if (type == "pause") {
             DisplayMessage(gameStatText, "Game Paused");
@@ -106,17 +110,19 @@ public class GameStatus : MonoBehaviour
     }
 
     public void ResumeGame() {
-        Time.timeScale = 1;
+        Time.timeScale = 1.0f;
+        Cursor.visible = false;
         gameStatText.text = "";
         gameOperText.text = "";
     }
 
     public void RestartGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1;
+        Time.timeScale = 1.0f;
+        Cursor.visible = false;
+        winStat = false;
         gameStatText.text = "";
         gameOperText.text = "";
-        winStat = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     public void DisplayMessage(Text textArea, string message) {
@@ -134,7 +140,7 @@ public class GameStatus : MonoBehaviour
         } else if (message == CollectMoreGemsMessage)
         {
             textArea.text = CollectMoreGemsMessage;
-        }else {
+        } else {
             textArea.text = "ERROR: Unknown input!";
         }
     }
