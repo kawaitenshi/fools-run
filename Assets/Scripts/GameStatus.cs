@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameStatus : MonoBehaviour
 {
+    public AudioClip short_time_left;
+    private bool played_stl = false;
+
     public GameObject timeRemainingObj;
     public GameObject gameStatObj;
     public GameObject gameOperObj;
@@ -41,6 +45,9 @@ public class GameStatus : MonoBehaviour
     void Update() {
         // Check remaining time of this round
         if (timeLeft > 0) {
+            if (timeLeft < 11 && !played_stl) {GetComponent<AudioSource>().clip = short_time_left;
+                   GetComponent<AudioSource>().Play();
+                   played_stl = true;}
             timeLeft -= Time.deltaTime;
         } else {
             PauseGame("lose");

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class MoveChicken : MonoBehaviour
 {
     // user inputs
@@ -28,6 +29,8 @@ public class MoveChicken : MonoBehaviour
     // model components
     private Rigidbody ChickenRigidbody;
     private Transform ChickenTransform;
+
+    public AudioClip chicken_jump_sound;
 
     // animation related
     Animator Animator;
@@ -153,6 +156,8 @@ public class MoveChicken : MonoBehaviour
         // only able to jump if you are on the ground
         if (isGrounded && userJumped && !hasFallen) {
             ChickenRigidbody.velocity = Vector3.up * jumpScale;
+             GetComponent<AudioSource>().clip = chicken_jump_sound;
+             GetComponent<AudioSource>().Play();
         }
     }
 

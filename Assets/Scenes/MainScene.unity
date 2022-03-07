@@ -63135,6 +63135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e2db113b951704693efc483aa0b7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  short_time_left: {fileID: 8300000, guid: 2825c4ebd27bc604db9839e61fafb2e6, type: 3}
   timeRemainingObj: {fileID: 522015912}
   gameStatObj: {fileID: 206288104}
   gameOperObj: {fileID: 151892954}
@@ -74389,6 +74390,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1844662777}
     m_Modifications:
+    - target: {fileID: 592348661947165723, guid: d8350b694559f3b4bb5d9af47b56c43e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b21d74098f8b8554787982dc9a6273b6, type: 3}
     - target: {fileID: 2831215336790764572, guid: d8350b694559f3b4bb5d9af47b56c43e, type: 3}
       propertyPath: camera
       value: 
@@ -74428,7 +74433,7 @@ PrefabInstance:
     - target: {fileID: 2831215336790764572, guid: d8350b694559f3b4bb5d9af47b56c43e, type: 3}
       propertyPath: chicken_squawk
       value: 
-      objectReference: {fileID: 8300000, guid: add3e3b2f65fdc24daf4e1037ca55fdb, type: 3}
+      objectReference: {fileID: 8300000, guid: b21d74098f8b8554787982dc9a6273b6, type: 3}
     - target: {fileID: 3886333034428638136, guid: d8350b694559f3b4bb5d9af47b56c43e, type: 3}
       propertyPath: m_Avatar
       value: 
@@ -74445,6 +74450,10 @@ PrefabInstance:
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 66241055}
+    - target: {fileID: 5253050476075507627, guid: d8350b694559f3b4bb5d9af47b56c43e, type: 3}
+      propertyPath: chicken_jump_sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e4278c0b72328a41b77c323f059b615, type: 3}
     - target: {fileID: 8448564011576739926, guid: d8350b694559f3b4bb5d9af47b56c43e, type: 3}
       propertyPath: m_RootOrder
       value: 4
